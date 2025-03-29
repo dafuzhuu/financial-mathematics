@@ -1,0 +1,13 @@
+\contentsline {section}{衍生产品介绍}{2}{Doc-Start}%
+\contentsline {section}{\numberline {1}随机分析}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}单时段证券模型}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}构造无风险对冲组合方法}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}资产组合复制方法}{3}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}多个市场状态下投资组合定价}{4}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}套利机会}{6}{subsubsection.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}风险中性测度}{7}{subsubsection.1.1.5}%
+\contentsline {subsubsection}{\numberline {1.1.6}凸集分离定理}{9}{subsubsection.1.1.6}%
+\contentsline {subsubsection}{\numberline {1.1.7}未定权益的可达性}{11}{subsubsection.1.1.7}%
+\contentsline {subsection}{\numberline {1.2}二期二叉树模型}{13}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}信息结构和域流}{15}{subsubsection.1.2.1}%
+\contentsline {section}{\numberline {2}期权定价模型}{18}{section.2}%
