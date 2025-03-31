@@ -149,7 +149,7 @@ V_1=\begin{cases}
 其中
 \[
 \begin{aligned}
-    q&=\frac{(1+r)S_0}{S_u-S-d}-\frac{S_d}{S_u-S_d}\\
+    q&=\frac{(1+r)S_0}{S_u-S_d}-\frac{S_d}{S_u-S_d}\\
     1-q&=\frac{S_u}{S_u-S_d}-\frac{(1+r)S_0}{S_u-S_d}
 \end{aligned}
 \]
@@ -916,3 +916,25 @@ $3=\text{rank}(\hat{S}^*(1;\Omega);\overrightarrow{Y}^*)\neq\text{rank}(\hat{S}^
 若 $X_1,\cdots,X_n$ 均关于 $\CF$ 可测，则 $g(X_1,\cdots,X_n)$ 也关于 $\CF$ 可测
 \end{property}
 
+\begin{property}
+    若 $X_1,X_2,\cdots,X_n$ 均关于 $\CF$ 可测，则 $g(X_1,X_2,\cdots,X_n)$ 也关于 $\CF$ 可测
+\end{property}
+
+\subsubsection{随机变量的生成$\sigma$-代数}
+
+若$\sigma$-代数$\CF$是使得随机变量$X_1,\cdots,X_n$可测的最小$\sigma$-代数，即
+\[
+\CF=\sigma\{X_1\leq t_1,\cdots ,X_n\leq t_n,\forall t_1,\cdots,t_n\in \RR\}
+\]
+记为
+\[
+\CF\overset{\Delta}{=}\sigma(X_1,\cdots,X_n)
+\]
+
+\begin{definition}[适应域流]
+    如果对每个 $t=0,1,\cdots,T$，随机变量 $S(t)$ 都是 $\CF_t$ 可测的，则称随机过程 $\{S(t),t=0,1,\cdots,T\}$ 适应域流 $\{\CF_t,t=0,1,\cdots,T\}$，或称是关于 $\{\CF_t\}$ 的适应随机过程
+\end{definition}
+
+\begin{definition}[自然域流]
+    若 $\CF_t=\sigma(S(0),S(1),\cdots,S(t))$，则称 $\{\CF_t,t=0,1,\cdots,T\}$ 为 $\{S(t)\}$ 的自然域流，它是使得 $\{S(t)\}$ 适应的最小域流
+\end{definition}
