@@ -938,3 +938,119 @@ $3=\text{rank}(\hat{S}^*(1;\Omega);\overrightarrow{Y}^*)\neq\text{rank}(\hat{S}^
 \begin{definition}[自然域流]
     若 $\CF_t=\sigma(S(0),S(1),\cdots,S(t))$，则称 $\{\CF_t,t=0,1,\cdots,T\}$ 为 $\{S(t)\}$ 的自然域流，它是使得 $\{S(t)\}$ 适应的最小域流
 \end{definition}
+
+回到之前资产价格变化的例子
+\[
+\CF_i=\sigma \{p_i\}=\sigma(S(0),\cdots,S(i)),i=0,1,2,3
+\]
+故 $\{\CF_i,i=0,1,2,3\}$ 为自然域流
+
+\begin{definition}[可料]
+    由于利率在期初一般是已知的，因此货币市场存款过程 $S_0(t)$ 关于 $\CF_{t-1}$ 可测$(t=1,2,\cdots,T)$，或称$S_0(t)$关于$\{\CF_t\}$是可料的，或 $\{S_0(t)\}$ 是 $\{\CF_t\}$ 可料过程
+\end{definition}
+
+\begin{definition}[带域流的概率空间]
+样本空间几乎定义在 \( \Omega \) 上的一个 \( \sigma \)-代数$\CF$，构成一个可测空间 \( (\Omega, \mathcal{F}) \)。若 \( P \) 为可测空间 \( (\Omega, \mathcal{F}) \) 上的一个概率函数，则三元组合 \( (\Omega, \mathcal{F}, P) \) 成为一个概率空间。若 \( \{ \mathcal{F}_t \} \) 为一个域流，则c称此概率空间的带域流的概率空间。
+
+（一般$\CF_t\st \CF$，\(\forall t\)）。
+\end{definition}
+
+\begin{definition}[等价测度]
+设 \( P \) 和 \( P' \) 是定义在同一可测空间 \( (\Omega, \mathcal{F}) \) 上的两个概率测度，如果 \( \forall A \in \mathcal{F} \)，
+\[
+P(A) > 0 \iff P'(A) > 0,
+\tag{$*$}
+\]
+则称 \( P \) 和 \( P' \) 是等价测度。
+\end{definition}
+
+若 \( \Omega \) 是离散的，则$(*)$式等价于 \( \forall \omega \in \Omega \)，
+\[
+P(\omega) > 0 \iff P'(\omega) > 0.
+\]
+
+\begin{definition}[条件期望]
+设 \( ( \Omega, \mathcal{G}, P ) \) 是一个概率空间，\( X \) 是可测空间 \( ( \Omega, \mathcal{G} ) \) 上一个随机变量，\( \forall B \in \mathcal{G} \)，定义
+\[
+\EE[X|B] = \frac{\EE(X\mathbb{I}_B)}{P(B)},
+\]
+其中 \( \mathbb{I}_B \) 为 \( B \) 的示性函数。即
+\[
+\mathbb{I}_B(\omega) = 
+\begin{cases} 
+1, & \omega \in B \\
+0, & \omega \notin B 
+\end{cases}
+\]
+\end{definition}
+
+设 \(\sigma\)-代数 \( \CF \subseteq \mathcal{G} \)。若 \( \CF = \sigma\{B_1, B_2, \cdots, B_n\} \)，其中 \( B_1, B_2, \cdots, B_n \) 为$\Omega$的一个划分，则定义
+\[
+\EE[X|\CF](\omega) = \sum_{i=1}^{n} \EE[X|B_i] \mathbb{I}_{B_i}(\omega) = \EE[X|B_i],\quad \omega\in B_i
+\]
+显然随机变量 \( \EE[X|\CF] \) 关于 \( \CF \) 可测。
+
+\begin{example}
+设资产价格树形图为
+
+\begin{minipage}{0.5\textwidth}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/exa_p149.jpg} % 替换为你的图片文件名
+    \end{figure}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \[
+    \begin{aligned}
+        &p(\omega_1)=0.2\\
+			&p(\omega_2)=0.3\\
+       &p(\omega_3)=0.35\\
+&p(\omega_4)=0.15\\
+    \end{aligned}
+    \]
+\end{minipage}
+\end{example}
+则
+\[
+\EE[S(2)|S(1)=3] = 4 \times \frac{0.2}{0.2+0.3} + 2 \times \frac{0.3}{0.2+0.3} = 2.8
+\]
+\[
+\EE[S(2)|S(1)=5] = 4 \times \frac{0.35}{0.35+0.15} + 6 \times \frac{0.15}{0.35+0.15} = 4.6
+\]
+令 \( \CF_1 \) 表示在 \( t=1 \) 时刻的得到的信息，则
+\[
+\mathcal{F}_1 = \{\emp, \{w_1, w_2\}, \{w_3, w_4\}, \Omega\}
+\]
+\[
+F_1 = \sigma(S_0, S_1) = \sigma(S_1) = \sigma\{(S_1 = 3), (S_1 = 5)\} = \sigma\{\{w_1, w_2\}, \{w_3, w_4\}\}
+\]
+令 \( B_1 = \{w_1, w_2\} = \{S(1) = 3\} \), \( B_2 = \{w_3, w_4\} = \{S(1) = 5\} \)，则 \(\{B_1, B_2\}\) 是 \(\Omega\) 的划分，且 \(\mathcal{F}_1 = \sigma(B_1, B_2)\)。于是
+\[
+\EE[S^{(2)}|\mathcal{F}_1] = 2.8\mathbb{I}_{B_1} + 4.6\mathbb{I}_{B_2}.
+\]
+
+考虑条件期望如上述定义，那么若 \( A \in \mathcal{F} \)，则
+\[
+\EE[\EE[X|\mathcal{F}]\mathbb{I}_A] = \EE[X\mathbb{I}_A].
+\]
+\begin{proof}
+∵ \(\mathcal{F} = \sigma(B_1, B_2, \ldots, B_n)\)，\(B_i, i=1, 2, \ldots, n\) 为$\Omega$的划分。故存在 \(i_1, i_2, \cdots, i_k = 0, 1, 2, \cdots, n\)，且各不相同，使得：
+\[
+A = \bigcup_{j=1}^k B_{i_j}
+\]
+于是
+\[
+\mathbb{I}_A = \sum_{j=1}^k \mathbb{I}_{B_{i_j}}.
+\]
+进一步
+\[
+\begin{aligned}
+    \EE[\EE[X|\mathcal{F}]\mathbb{I}_A] = \sum_{j=1}^k \EE[\EE[X|\mathcal{F}]\mathbb{I}_{B_{i_j}}]&=\sum_{j=1}^k \EE[\EE[X|B_{i_j}]\mathbb{I}_{B_{i_j}}]\\
+    &=\sum_{j=1}^k \EE[\frac{\EE(X\mathbb{I}_{B_{i_j}})}{p(B_{i_j})}\mathbb{I}_{B_{i_j}}]\\
+    &=\sum_{j=1}^k \frac{\EE(X\mathbb{I}_{B_{i_j}})}{p(B_{i_j})}\EE[\mathbb{I}_{B_{i_j}}]\\
+    &=\sum_{j=1}^k \EE(X\mathbb{I}_{B_{i_j}})\\
+    &=\EE(X\sum_{j=1^k}\mathbb{I}_{B_{i_j}})\\
+    &=\EE(X\mathbb{I}_A)
+\end{aligned}
+\]
+\end{proof}
